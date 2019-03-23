@@ -4,6 +4,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.logging.Logger;
 
@@ -28,7 +30,7 @@ public class BaseFilter implements Filter {
 
         if (headerNames != null) {
             while (headerNames.hasMoreElements()) {
-                System.out.println("Header: " + req.getHeader(headerNames.nextElement()));
+                FILTER_LOGGER.info("Header: " + req.getHeader(headerNames.nextElement()));
             }
         }
 
